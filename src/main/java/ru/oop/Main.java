@@ -1,5 +1,9 @@
 package ru.oop;
 
+import java.util.List;
+
+import static ru.oop.Person.*;
+
 /**
  * <b>Задача 2:</b><br>
  * Добраться человеку до заданного места.<br>
@@ -38,6 +42,26 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
+       var TransportChoose = List.of(new Car(), new Bus("43", person), new Bus("50", person) );
+
+       person.walk(TransportChoose.get(0).getPosition());
+       
+       for (int i = 0; i< TransportChoose.size() - 1; i++){
+           var nextTrans = TransportChoose.get(i+1);
+           var nextDestination = nextTrans.getPosition();
+
+
+           TransportChoose.get(i).drive(person, nextDestination);
+           person.walk(nextDestination);
+
+
+
+        }
+
+
+       TransportChoose.get(TransportChoose.size() - 1).drive(person,destination);
+       person.walk(destination);
+
         // TODO
         assert person.getPosition() == destination;
     }

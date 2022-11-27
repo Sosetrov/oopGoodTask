@@ -18,4 +18,6 @@ public interface Positioned {
      * Установить текущее местоположение
      */
     void setPosition(Position position);
+
+    void drive(Person person, Position destination);
 }
