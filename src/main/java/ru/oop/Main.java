@@ -38,6 +38,12 @@ public class Main {
      * на любом, заранее определённом транспорте
      */
     public static void moveTo(Person person, Position destination) {
+
+        Bus bus = new Bus("43", person);
+
+        person.walk(person.getPosition());
+        bus.drive(person,destination);
+
         // TODO
         assert person.getPosition() == destination;
     }
