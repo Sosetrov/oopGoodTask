@@ -43,8 +43,8 @@ public class Main {
 
         person.walk(person.getPosition());
         bus.drive(person,destination);
+        person.walk(destination);
 
-        // TODO
         assert person.getPosition() == destination;
     }
 }
