@@ -62,7 +62,7 @@ public class Main {
        TransportChoose.get(TransportChoose.size() - 1).drive(person,destination);
        person.walk(destination);
 
-        // TODO
+
         assert person.getPosition() == destination;
     }
 }
